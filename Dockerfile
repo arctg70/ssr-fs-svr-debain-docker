@@ -1,9 +1,10 @@
-FROM ubuntu:trusty
+FROM lolhens/baseimage
 
 MAINTAINER arctg70 <simon.zhou@gmail.com>
 # COPY rc.local /etc/rc.local
 RUN apt-get update && \
-    apt-get install -y --force-yes curl git python && \
+    apt-get upgrade -y --force-yes &&\
+    apt-get install -y --force-yes curl git python libsodium-dev openjdk-7-jre && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN curl -sSL https://raw.githubusercontent.com/jonechenug/finalspeed/master/install_fs.sh --output install_fs.sh \
