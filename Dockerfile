@@ -20,7 +20,6 @@ EXPOSE 150/udp
 EXPOSE 8765
 EXPOSE 8766
 
-
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
 
