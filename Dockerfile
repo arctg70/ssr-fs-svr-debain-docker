@@ -14,8 +14,12 @@ RUN cd / && \
     git clone -b manyuser https://github.com/shadowsocksr/shadowsocksr.git && \
     cd /shadowsocksr && \
     bash initcfg.sh 
+COPY user-config.json /shadowsocksr/user-config.json
+
 EXPOSE 150/udp
-EXPOSE 8388
+EXPOSE 8765
+EXPOSE 8766
+
 
 ADD start.sh /start.sh
 RUN chmod 755 /start.sh
